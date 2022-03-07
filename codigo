@@ -1,0 +1,57 @@
+#include <iostream> 
+#include <stdio.h>
+#include <stdlib.h>
+
+using namespace std;
+
+int num = 500;   //Guarda el numero actual
+char resp = 'n';  //Guarda la respuesta del usuario
+char memo;   //Guarda si el numero es mayor o menor
+void mayor();
+void menor();
+void preguntar();
+
+
+int main(){
+	
+	cout<< "--------------Piensa en un numero entre 1-1000--------------"<<endl;
+	
+	if(resp == 'n' or resp == 'N'){
+		preguntar();
+	}
+	else{
+	system("cls");
+		cout<<"El numero en el que pensaste es: "<<num;
+	return 0;}	
+}
+
+/*void mayor(){	
+		num = num + (num/2);
+		cout<<"El numero en el que estas pensando es: "<<num<<" ?"<<endl;						
+}*/
+
+/*void menor(){
+    	num = num/2;
+    	cout<<"El numero en el que estas pensando es: "<<num<<" ?"<<endl;	
+}*/
+void preguntar(){
+	cout<<"Tu numero es "<<num<<"? ";
+	cout<<"Responde 'N' para no o 'S' para si"<<endl; cin>>resp;	
+	if(resp == 'S' or resp == 's'){
+		main();
+	}
+	if(resp == 'N' or resp=='n'){
+		system("cls");
+		cout<<"Tu numero es mayor o menor a "<<num<<" ? "<<endl;
+		cout<<"Responde '+' si tu numero es mayor o '-' si tu numero es menor "<<endl;
+		cin>>memo;
+		if(memo == '+'){
+		    num = ((1000-num)/2)+num;
+			preguntar();   			
+		}
+		if(memo == '-'){
+			num = num/2;
+			preguntar();
+		}
+	}	
+}
